@@ -29,7 +29,7 @@ public class Game implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String brand;
+    private String developer;
     private Integer year;
     private String description;
     
@@ -37,14 +37,6 @@ public class Game implements Serializable{
     @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties("games")
     private Category category;
-    
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "game")
-    @JsonIgnoreProperties({"game", "client"})
-    private List<Message> messages;
-	
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "game")
-    @JsonIgnoreProperties({"game", "client"})
-    private List<Reservation> reservations;
 
     public Integer getId() {
         return id;
@@ -62,12 +54,12 @@ public class Game implements Serializable{
         this.name = name;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getDeveloper() {
+        return developer;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setDeveloper(String developer) {
+        this.developer = developer;
     }
 
     public Integer getYear() {
@@ -110,6 +102,13 @@ public class Game implements Serializable{
         this.reservations = reservations;
     }
     
-    
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "game")
+    @JsonIgnoreProperties({"game", "client"})
+    private List<Message> messages;
+	
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "game")
+    @JsonIgnoreProperties({"game", "client"})
+    private List<Reservation> reservations;
+
     
 }

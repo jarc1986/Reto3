@@ -47,18 +47,19 @@ public class ServiciosGame {
                 if(game.getName()!=null){
                     e.get().setName(game.getName());
                 }
-                if(game.getBrand()!=null){
-                    e.get().setBrand(game.getBrand());
+                if(game.getDeveloper()!=null){
+                    e.get().setDeveloper(game.getDeveloper());
                 }
                 if(game.getYear()!=null){
                     e.get().setYear(game.getYear());
                 }
-                if(game.getDescription()!=null){
-                    e.get().setDescription(game.getDescription());
-                }
                 if(game.getCategory()!=null){
                     e.get().setCategory(game.getCategory());
                 }
+                if(game.getDescription()!=null){
+                    e.get().setDescription(game.getDescription());
+                }
+                
                 metodosCrud.save(e.get());
                 return e.get();
             }else{
