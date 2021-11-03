@@ -53,7 +53,7 @@ public class Message implements Serializable {
         return game;
     }
 
-    public void setBike(Game game) {
+    public void setGame(Game game) {
         this.game = game;
     }
 
