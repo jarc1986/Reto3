@@ -53,12 +53,15 @@ public class ServiciosGame {
                 if(game.getYear()!=null){
                     e.get().setYear(game.getYear());
                 }
-                if(game.getCategory()!=null){
-                    e.get().setCategory(game.getCategory());
-                }
                 if(game.getDescription()!=null){
                     e.get().setDescription(game.getDescription());
                 }
+                if(game.getCategory()!=null){
+                    e.get().setCategory(game.getCategory());
+                }
+                
+
+
                 
                 metodosCrud.save(e.get());
                 return e.get();
