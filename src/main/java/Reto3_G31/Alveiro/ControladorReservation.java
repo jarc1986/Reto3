@@ -57,7 +57,7 @@ public class ControladorReservation {
         return servicio.deleteReservation(reservationId);
     }
      @GetMapping("/report-status")
-    public StatusReservas getReservas(){
+    public StatusReservations getReservation(){
         return servicio.getReportStatusReservations();
     }
     

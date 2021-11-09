@@ -9,11 +9,11 @@ package Reto3_G31.Alveiro;
  *
  * @author USER
  */
-public class StatusReservas {
+public class StatusReservations {
     private int completed;
     private int cancelled;
 
-    public StatusReservas(int completed, int cancelled) {
+    public StatusReservations(int completed, int cancelled) {
         this.completed = completed;
         this.cancelled = cancelled;
     }

@@ -75,10 +75,10 @@ public class ServiciosReservation {
         }).orElse(false);
         return aBoolean;
     }
-     public StatusReservas getReportStatusReservations(){
+     public StatusReservations getReportStatusReservations(){
         List<Reservation>completed= metodosCrud.ReservacionStatus("completed");
         List<Reservation>cancelled= metodosCrud.ReservacionStatus("cancelled");
-        return new StatusReservas(completed.size(), cancelled.size());
+        return new StatusReservations(completed.size(), cancelled.size());
     }
     
     public List<Reservation> getReportesTiempoReservaciones(String datoA, String datoB) throws java.text.ParseException{
