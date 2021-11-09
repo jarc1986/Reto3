@@ -38,6 +38,14 @@ public class Game implements Serializable{
     @JsonIgnoreProperties("games")
     private Category category;
 
+     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "game")
+    @JsonIgnoreProperties({"game", "client"})
+    private List<Message> messages;
+	
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "game")
+    @JsonIgnoreProperties({"game", "client"})
+    private List<Reservation> reservations;
+    
     public Integer getId() {
         return id;
     }
@@ -102,13 +110,7 @@ public class Game implements Serializable{
         this.reservations = reservations;
     }
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "game")
-    @JsonIgnoreProperties({"game", "client"})
-    private List<Message> messages;
-	
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "game")
-    @JsonIgnoreProperties({"game", "client"})
-    private List<Reservation> reservations;
+   
 
     
 }

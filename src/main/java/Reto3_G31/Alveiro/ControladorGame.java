@@ -29,8 +29,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/Game")
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class ControladorGame {
-   @Autowired
+    @Autowired
     private ServiciosGame servicio;
+   
     @GetMapping("/all")
     public List<Game> getGames(){
         return servicio.getAll();
