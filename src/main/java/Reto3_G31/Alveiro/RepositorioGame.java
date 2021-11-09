@@ -23,7 +23,7 @@ public class RepositorioGame {
         return (List<Game>) crud.findAll();
     }
 	
-    public Optional<Game> getBike(int id){
+    public Optional<Game> getGame(int id){
         return crud.findById(id);
     }
 	
